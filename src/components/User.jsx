@@ -30,11 +30,9 @@ const User = () => {
             <h2>{user.name}</h2>
             <h3>username: {user.username}</h3>
             <h3>email: {user.email}</h3>
-            <h4>
-                <span>company: {comp.name}</span>
-                <span>website: <a href={`http://${user.website}`}>{user.website}</a></span>
-                <span>phone: {user.phone}</span>
-            </h4>
+            <h4>company: {comp.name}</h4>
+                <h4>website: <a href={`http://${user.website}`}>{user.website}</a></h4>
+                <h4>phone: {user.phone}</h4>
             <p>wanna hear some bs? "{comp.bs}"</p>
             <p><a href={URL} target="_new">view raw data.</a></p>
         </div>
