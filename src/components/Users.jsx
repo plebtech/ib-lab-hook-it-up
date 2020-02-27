@@ -11,8 +11,8 @@ const Users = () => {
             let users = await res.json();
             setUsers(users);
         }
-        catch {
-            console.log('error');
+        catch(err) {
+            console.log(err);
         }
     }
 
