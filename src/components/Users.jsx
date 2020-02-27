@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import UCard from './UCard';
 
 const Users = () => {
+
+    const [users, setUsers] = useState([]);
+
+    const getUsers = async () => {
+        try {
+            let res = await fetch('https://jsonplaceholder.typicode.com/users');
+            let users = await res.json();
+            setUsers(users);
+        }
+        catch {
+            console.log('error');
+        }
+    }
+
+    useEffect(() => {
+        getUsers();
+    }, []);
+
     return (
         <>
-            <h1>characters of studio ghibli.</h1>
-            {/* {this.state.people.map((person) => {
-                return (
-                    // <PCard
-                    //     key={person.id}
-                    //     id={person.id}
-                    //     name={person.name}
-                    //     url={person.url}
-                    //     age={person.age}
-                    //     gender={person.gender}
-                    // />
-                )
-            })} */}
+            <h1>users.</h1>
+                {users.map(user => {
+                    return (
+                        <UCard 
+                            key={user.id}
+                            user={user}
+                        />
+                    )
+                })}
         </>
     )
 }
