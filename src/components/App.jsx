@@ -1,9 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 const App = () => {
     return (
-        <h1>hi</h1>
+        <Router>
+            <div id="controls">
+                <Link></Link>
+            </div>
+            <div id="output">
+                <Switch>
+                    <Route>
+
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     )
 }
 
