@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
     return (
         <>
-            <h1>routing with hooks in react.</h1>
+            <h1>hook it up - routing with hooks in react.</h1>
             <h2>hooks first, routing second.</h2>
             <h3>this is a demonstration of implementing react hooks in place of class-based components.</h3>
             <h3>routing is used to access a fake api that provides json data (<a href="https://jsonplaceholder.typicode.com/" target="_new">JSONPlaceholder</a>).</h3>

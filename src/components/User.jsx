@@ -8,22 +8,21 @@ const User = () => {
     const PARAMS = useParams();
     const URL = 'https://jsonplaceholder.typicode.com/users/' + PARAMS.id;
 
-    const getUser = async () => {
-        try {
-            let res = await fetch(URL);
-            let user = await res.json();
-            let comp = await user.company;
-            setUser(user);
-            setComp(comp);
-        }
-        catch(err) {
-            console.log(err);
-        }
-    }
-
     useEffect(() => {
+        const getUser = async () => {
+            try {
+                let res = await fetch(URL);
+                let user = await res.json();
+                let comp = await user.company;
+                setUser(user);
+                setComp(comp);
+            }
+            catch(err) {
+                console.log(err);
+            }
+        }
         getUser();
-    }, []);
+    }, [URL]);
     
     return (
         <div className="card">
